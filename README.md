@@ -1,1 +1,1 @@
-This is a repository fir the Pacesetters and BU Spark! project.
+This is a repository for the Pacesetters and BU Spark! project.
