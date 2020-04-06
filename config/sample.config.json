@@ -1,0 +1,6 @@
+{ 
+        "host": "your host IP",
+        "schema": "your db name",
+        "pass": "your password",
+        "user": "your user name"
+}
