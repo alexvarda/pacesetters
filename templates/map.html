@@ -1,16 +1,36 @@
+
 <html>
 <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <title>First Map</title>
+</head>
+  
+<body>
 <h1>First Map</h1>
 
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
-</head>
+<div>
+<div id="map" style="height: 250px;"></div>
+<script type="text/javascript">
+    var TILE_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+    var MB_ATTR = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+    var mymap = L.map('map').setView([42.36552, -71.10449], 8);
+    var layer = L.tileLayer(TILE_URL, {attribution: MB_ATTR}).addTo(mymap);
+    mymap.addLayer(layer);
+</script>
+</div>
 
 
-
-
-
-
-<body>
+<div>
+<script type="text/javascript">
+<?php include 'connection.php' ?>
+var data = <?php echo JSON_encode($myArray); ?>;
+</script>
+</div>
+<!--
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
@@ -33,11 +53,11 @@
   // Now add the layer onto the map
       map.addLayer(layer);
 
-      L.marker([42.36552, -71.10449]).addTo(map)
-      .bindPopup("<strong>Aciron Consulting</strong>").openPopup();
+      for ( var i = 0; i < latlong.length; i ++) { marker = new L.marker([latlong[i][ 1 ],latlong[i][ 2]]).addTo(map);}
     </script>
   </div>
-    
+-->
+  
 </body>
 
 
